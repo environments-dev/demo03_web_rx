@@ -10,14 +10,24 @@ function obtenerUsuarios() {
 }
 
 let idUsuariosP = [];
+let n = idUsuariosP.length;
 
 idUsuariosP.push(obtenerUsuarios());
 
-for (var i = 0; i < idUsuariosP.length; i++) {
+setInterval(() => {
   console.log("Listando usuarios");
-  actualizaNotificaciones(idUsuariosP[i]);
-}
+  for (var i = n; i < idUsuariosP.length; i++) {
+    actualizaNotificaciones(idUsuariosP[i]);
+  }
+  n = idUsuariosP.length;
 
+}, 3000);
+
+
+
+setInterval(() => {
+  idUsuariosP.push(obtenerUsuarios());
+}, 3000);
 
 /*
 var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
