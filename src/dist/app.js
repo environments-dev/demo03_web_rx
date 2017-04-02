@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 function actualizaNotificaciones(id) {
-  console.log("Usuario " + id + " actualizado xx");
+  console.log('Usuario ' + id + ' actualizado xx');
 }
 
 function obtenerUsuarios() {
@@ -10,32 +10,34 @@ function obtenerUsuarios() {
   var max = 23456;
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
-var idUsuariosP = [];
-var n = idUsuariosP.length;
+/*
+let idUsuariosP = [];
+let n = idUsuariosP.length;
 
 idUsuariosP.push(obtenerUsuarios());
 
-setInterval(function () {
+setInterval(() => {
   console.log("Listando usuarios");
   for (var i = n; i < idUsuariosP.length; i++) {
     actualizaNotificaciones(idUsuariosP[i]);
   }
   n = idUsuariosP.length;
+
 }, 3000);
 
-setInterval(function () {
+
+
+setInterval(() => {
   idUsuariosP.push(obtenerUsuarios());
 }, 3000);
+*/
 
-/*
-var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
-  setInterval(() => {
+var idUsuarios = Rx.Observable.create(function (leerNuevosUsuarios) {
+  setInterval(function () {
     leerNuevosUsuarios.next(obtenerUsuarios());
   }, 3000);
 });
 
-idUsuarios.subscribe((usuarioId) => {
-  actualizaNotificaciones((usuarioId));
+idUsuarios.subscribe(function (usuarioId) {
+  actualizaNotificaciones(usuarioId);
 });
-*/

@@ -8,7 +8,7 @@ function obtenerUsuarios() {
   let max = 23456;
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
+/*
 let idUsuariosP = [];
 let n = idUsuariosP.length;
 
@@ -28,8 +28,8 @@ setInterval(() => {
 setInterval(() => {
   idUsuariosP.push(obtenerUsuarios());
 }, 3000);
+*/
 
-/*
 var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
   setInterval(() => {
     leerNuevosUsuarios.next(obtenerUsuarios());
@@ -39,4 +39,3 @@ var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
 idUsuarios.subscribe((usuarioId) => {
   actualizaNotificaciones((usuarioId));
 });
-*/
