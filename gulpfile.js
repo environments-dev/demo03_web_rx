@@ -34,29 +34,6 @@ gulp.task('serve-browser-sync', () => {
 
 );
 
-var config = {
-    filename: 'home',
-    src: ['./src/app/*.js', './src/app/**/*.js'],
-    srcHtml: ['./src/app/views/*.html', './src/app/views/**/*.html'],
-    srcIndexHtml: ['src/index.html',],
-    srcCss: ['./src/content/*.css', './src/content/**/*.css'],
-    images: './src/media/**/*',
-    dest: './src/dist',
-    umd: {
-
-    },
-    banner: ['/**',
-        ' * <%= pkg.name %> - <%= pkg.description %>',
-        ' * @author <%= pkg.author %>',
-        ' * @version v<%= pkg.version %>',
-        ' * @link <%= pkg.homepage %>',
-        ' * @license <%= pkg.license %>',
-        ' */',
-        ''
-    ].join('\n')
-};
-
-
 gulp.task('js-min', () =>
     gulp.src('src/app/*.jsx')
         .pipe(babel({

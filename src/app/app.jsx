@@ -9,6 +9,17 @@ function obtenerUsuarios() {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+let idUsuariosP = [];
+
+idUsuariosP.push(obtenerUsuarios());
+
+for (var i = 0; i < idUsuariosP.length; i++) {
+  console.log("Listando usuarios");
+  actualizaNotificaciones(idUsuariosP[i]);
+}
+
+
+/*
 var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
   setInterval(() => {
     leerNuevosUsuarios.next(obtenerUsuarios());
@@ -18,3 +29,4 @@ var idUsuarios = Rx.Observable.create((leerNuevosUsuarios) => {
 idUsuarios.subscribe((usuarioId) => {
   actualizaNotificaciones((usuarioId));
 });
+*/
